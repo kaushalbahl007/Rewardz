@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
 
+export interface Item {
+  pk: number;                 // Primary key or unique identifier
+  name: string;               // Name of the item
+  points: number;             // Points associated with the item
+  display_img_url: string;    // URL for the display image
+  quantity: number;           // Quantity of the item available
+  valid_until: string;        // Validity date for the item
+  low_quantity: number;       // Threshold for low quantity warning
+}
+
 @Component({
   selector: 'app-listing-page',
   templateUrl: './listing-page.component.html',
   styleUrls: ['./listing-page.component.scss']
 })
 export class ListingPageComponent {
-  items = [
+  items:Item[] = [
     {
       pk: 987,
       name: "amul",
@@ -74,7 +84,7 @@ export class ListingPageComponent {
     this.searchQuery = query;  // Update the search query in the parent component
   }
 
-  onSortEventChange(event:any){
+  onSortEventChange(event:Item[]){
     this.items=event
   }
   

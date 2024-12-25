@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { SortModalComponent } from '../sort-modal/sort-modal.component';
+import { Item } from '../listing-page/listing-page.component';
 
 @Component({
   selector: 'app-item-list',
@@ -7,14 +8,14 @@ import { SortModalComponent } from '../sort-modal/sort-modal.component';
   styleUrls: ['./item-list.component.scss']
 })
 export class ItemListComponent implements OnInit {
-  @Input() item: any;
+  @Input() item: Item[]=[];
   @ViewChild(SortModalComponent)
   private timerComponent!: SortModalComponent;
 
   
 
   @Output() sortEvent = new EventEmitter<any[]>();
-  originalItems: any[] = [];
+  originalItems: Item[] = [];
 
 
   ngOnInit(): void {

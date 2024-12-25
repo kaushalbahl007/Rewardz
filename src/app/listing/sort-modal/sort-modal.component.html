@@ -15,7 +15,7 @@
       </div>
       <div class="modal-body">
         <!-- Add your sorting options here -->
-        <label for="sort-option">Sort:</label>
+        <h4 for="sort-option">Sort:</h4>
         <div class="d-flex mt-3 sortedBtnBox">
             <button class="btn sortedBtn" [ngClass]="{'sortedBtnActive': selectedOption === 'az'}"  (click)="onClick('az')">A to Z</button>
             <button class="btn sortedBtn" (click)="onClick('za')" [ngClass]="{'sortedBtnActive': selectedOption === 'za'}">Z to A</button>
