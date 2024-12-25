@@ -1,0 +1,35 @@
+.header_section{
+    background-color: red;
+
+    .header_logo_image{
+        img{
+            height: 57px;
+            width: 75px;
+            object-fit: contain;
+        }
+    }
+    .btn-outline-secondary{
+        border: 1px solid rgba(255, 255, 255, 0);
+        background-color: rgba(153, 149, 149, 0.5); 
+        border-radius: 8px;
+        position: relative;
+        i{
+            color: white;
+            font-size: 22px;
+        }
+        .count{
+            font-size: 10px;
+            border: 1px solid white;
+            border-radius: 20px;
+            color: white;
+            background-color: rgba(153, 149, 149, 0.5); 
+            padding: 2px;
+            position: absolute;
+            top: -6px;
+            left: 23px;
+            
+        }
+
+    }
+
+}

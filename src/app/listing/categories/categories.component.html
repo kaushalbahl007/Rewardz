@@ -1,1 +1,14 @@
-<p>categories works!</p>
+<div class="category-list">
+    <h4 class="category-heading">Categories</h4>
+    <ul class="category-items">
+      <li *ngFor="let category of categories" class="category-item">
+        <div>
+            <span><i class="fa fa-angle-down"></i></span> {{ category }}
+        </div>
+        <div>
+            <span><i class="fa fa-check active" [ngClass]="{'active': category === 'E-voucher'}"  aria-hidden="true"></i></span>
+        </div>
+      
+      </li>
+    </ul>
+  </div>

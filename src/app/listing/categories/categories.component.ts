@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent {
-
+  categories: string[] = ['E-voucher', 'product', 'everGreen',"product","rewards","fashion & retails"];
 }

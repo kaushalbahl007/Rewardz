@@ -1,0 +1,111 @@
+
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(153, 149, 149, 0.5); 
+    z-index: 0; 
+  }
+.modal-container {
+    position: fixed;
+    top: 2px;
+    right: 2px;
+    height: 100%;
+    width: 400px;
+    background-color: rgba(251, 144, 144, 0.5);
+    z-index: 1050;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    animation: slideIn 0.3s ease-in-out;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    z-index: 20;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .close-btn{
+        position: absolute;
+        top: -8px;
+        right: 5px;
+    }
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .filterBy{
+        font-weight: 500;
+        font-size: 14px;
+        
+    }
+    .resetBox{
+        border-bottom: 1px solid #e7e2e2;
+        width: 100%;
+        padding-bottom: 10px;
+        margin-top: 10px;
+    }
+    .resetAll{
+        color: orange;
+        cursor: pointer;
+    }
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .modal-body {
+    margin-top: 20px;
+    .sortedBtn{
+        border: 1px solid rgb(190, 187, 187);
+        background-color: white;
+        padding: 10px 10px;
+    }
+    .sortedBtnBox{
+        gap: 10px;
+    }
+    .sortedBtnActive{
+        background-color: red;
+        color: white;
+    }
+  }
+  
+  .modal-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    .apply{
+        width: 100%;
+        background-color: #993636;
+        border: 1px solid white;
+        color: white;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  

@@ -1,0 +1,114 @@
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  
+    .card {
+      width: calc(33.33% - 20px);
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      background-color: #fff;
+      overflow: hidden;
+
+   
+  
+      // Card Image
+      .card-img {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 10px;
+        object-fit: cover;
+      }
+      .image-section{
+        position: relative;
+        .out_of_stock{
+            color: grey;
+            font-size: 14px;
+        }
+      }
+  
+      .card-body {
+        text-align: center;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        margin-top: -20px;
+        background-color: white;
+        z-index: 2;
+        gap: 9px;
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+  
+      .card-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .bold{
+        font-weight: 500;
+      }
+  
+   
+      .out-of-stock-overlay {
+        position: absolute;
+        bottom: 35px;
+        background: rgb(224 222 222 / 70%);
+        color: red;
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        border-radius: 8px;
+        padding: 4px 16px;
+        left: 10px;
+      }
+  
+
+      .high-demand {
+        font-size: 14px;
+        color: orange;
+        margin-top: 10px;
+      }
+      .divider {
+        border: 0;
+        border-top: 1px solid #9c8f8f;  
+        margin: 10px 0;  
+      }
+
+      .btn {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  
+  }
+  .sort{
+    background-color:#993636;
+    color:white;
+  }
+  .resultFound{
+    color: rgb(48, 48, 141);
+}
+
+
+
+@media (max-width: 769px) {
+    .item-list {
+      justify-content: center; /* Center the cards on larger screens */
+    }
+  
+    .card {
+      width:100% !important; /* Only one card per row on larger screens */
+    }
+  }

@@ -1,2 +1,33 @@
-<app-categories></app-categories>
-<app-item-list></app-item-list>
+<div class="listingPage">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="seachBar">
+                    <app-search-bar (searchQueryChanged)="onSearchQueryChanged($event)"></app-search-bar>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-flex">
+                <div class="pb-2">
+                    <h4>Applied Filter:</h4>
+                </div>
+                <div class="d-flex filter-category">
+                    <p>E-Voucher <span><i class="fa fa-times" aria-hidden="true"></i></span></p>
+                    <p>Clear Filter <span><i class="fa fa-times" aria-hidden="true"></i></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <app-categories></app-categories>
+            </div>
+            <div class="col-lg-9">
+                <div>
+                    <app-item-list [item]="filteredItems" (sortEvent)="onSortEventChange($event)"></app-item-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

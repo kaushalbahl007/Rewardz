@@ -1,1 +1,45 @@
-<p>item-list works!</p>
+
+
+<div class="d-flex justify-content-between align-items-center mt-2 mb-2">
+    <div>
+      <h4 class="resultFound">{{item.length}} Results Found</h4>
+    </div>
+    <div>
+      <button class="btn sort" (click)="openPopModal()">Sort</button>
+    </div>
+  </div>
+<div class="item-list">
+    <div class="card" *ngFor="let item of item">
+      <!-- Out of Stock overlay -->
+     
+      <div class="image-section">
+        <!-- <img *ngIf="item.display_img_url" [src]="item.display_img_url" alt="Item Image" class="card-img"> -->
+        <img *ngIf="item.display_img_url; else defaultImage" [src]="item.display_img_url" alt="Image" class="card-img">
+        <ng-template #defaultImage>
+        <img src="../../../assets/image/dummy_image.jpg" alt="Dummy Image" class="card-img">
+        </ng-template>
+        <div *ngIf="item.quantity === 0" class="out-of-stock-overlay">
+            <span class="out_of_stock">(Out of Stock)</span>
+        </div>
+        <div *ngIf="item.quantity !== 0 && item.quantity <= item.low_quantity" class="out-of-stock-overlay">
+            <div class="">
+                <p class="high-demand m-0">ON High Demand</p>
+                <p class="out_of_stock m-0">(Only {{ item.quantity }} rewards left)</p>
+            </div>
+            
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+        <p class="card-text m-0 mt-3">Points: <span class="bold" >{{ item.points }}</span></p>
+        <hr class="divider">
+      
+        <p *ngIf="item.valid_until" class="card-text m-0">Valid Until: <span class="bold">{{ item.valid_until | date:'shortDate' }}</span> </p>
+  
+      </div>
+    </div>
+</div>
+
+<app-sort-modal #sortModal (sortApplied)="onSortApplied($event)"></app-sort-modal>
+  
+
